@@ -10,15 +10,15 @@ openbabel==3.1.0
 ##################################
 0. download PDBbind-2020 dataset from http://www.pdbbind.org.cn/, and CSAR-HiQ dataset from http://www.csardock.org/.
 Notice: You need to use the UCSF Chimera tool to convert the PDB-format files into MOL2-format files for feature extraction at first.
-The SMILES in ligands and sequences of proteins in dataset/smiles_sequence.csv are obtained from http://www.pdbbind.org.cn/
+The SMILES of ligands and sequences of proteins in dataset/smiles_sequence.csv are obtained from http://www.pdbbind.org.cn/
 
 1. extract_prot_emb_from_esm_1b.py
-using the pretrained ESM-1b to extract features of proteins
+using the pre-trained ESM-1b to extract features of proteins
 https://pypi.org/project/fair-esm/0.4.2/
 (pdbbind_seq_esm_1b_rep.json and csar_seq_esm_1b_rep.json in file dataset are extracted features of the PDBbind2020 and CSAR set)
 
 2. learn_word2vec_emb.py
-using Word2Vec to to learn character embeddings of SMILES and protein sequences
+using Word2Vec to learn character embeddings of SMILES and protein sequences
 lig_vocab_emb.npy and prot_vocab_emb.npy in files dataset are learn vocabulary embeddings
 
 3. run 'prepare_pdbbind.py' to prepare dataset for training
